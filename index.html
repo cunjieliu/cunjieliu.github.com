@@ -17,7 +17,12 @@
 		        anchors: ['page1', 'page2', 'page3', 'page4','page5'],
 		        'navigation': true,
 		        'navigationPosition': 'right',
-		        'navigationTooltips': ['leifengshushu', 'guangzhou', 'hello', 'world','cunjieliu']
+		        'scrollingSpeed': 500,
+		        //'controlArrowColor': "#fff",
+		        'navigationTooltips': ['leifengshushu', 'guangzhou', 'hello', 'world','cunjieliu'],
+		        afterLoad: function(){
+		        	console.log('cunjieliu');
+		        }
 		    })
 		})
 	</script>
@@ -36,7 +41,12 @@
 	    </div>
 	    <div class="section">
 	    	<div class='page2'>
-	    		<div>cunjieliu</div>
+	    		<img src="./images/me.jpg" alt="">
+				<div class='info'>
+					<h1 class='name'>雷锋叔叔</h1>
+					<h4 class='intro'>-- 如果你认真看完，我想你是爱我的。</h4>
+					<h4 class='link'><span>weibo: </span><a href='http://www.weibo.com/446057993'>@雷锋叔叔Touch</a></h4>
+				</div>
 	    	</div>
 	    </div>
 	    <div class="section">
