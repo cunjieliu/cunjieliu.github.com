@@ -1,0 +1,28 @@
+html {
+  color: #fff;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+#fullpage .page1,
+#fullpage .page2,
+#fullpage .page3,
+#fullpage .page4,
+#fullpage .page5 {
+  width: 1024px;
+  margin: 0 auto;
+}
+#fullpage .page1 img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  float: left;
+}
+#fullpage .page1 .info {
+  float: left;
+  margin-left: 100px;
+}
