@@ -62,6 +62,14 @@ a:hover {
     opacity: 1;
   }
 }
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /*.moveY{
 	.transform(0,-150px,0);
 	-webkit-backface-visibility: hidden;
@@ -106,6 +114,26 @@ a:hover {
 #fullpage .active .page2 .info {
   -webkit-animation: move3 0.8s ease-in;
 }
+#fullpage .active .slide h1 {
+  -webkit-animation: move 1s ease-in;
+}
+#fullpage .active .slide .slide-1-1 {
+  -webkit-animation: move2 0.8s ease-in;
+}
+#fullpage .active .slide .slide-1-2 {
+  -webkit-animation: move 0.8s ease-in;
+  /*-webkit-animation: move2 0.8s ease-in;*/
+
+}
+#fullpage .active .slide .slide-1-3 {
+  -webkit-animation: move2 0.8s ease-in;
+}
+#fullpage .active .page4 img {
+  -webkit-animation: move2 0.8s ease-in;
+}
+#fullpage .active .page4 .info {
+  -webkit-animation: move3 0.8s ease-in;
+}
 #fullpage .page1 img {
   width: 512px;
   height: 512px;
@@ -119,28 +147,54 @@ a:hover {
 		-webkit-animation-play-state: paused;*/
 
 }
+#fullpage .page2 img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+#fullpage .slide {
+  width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+#fullpage .slide img {
+  width: 250px;
+  height: 250px;
+}
+#fullpage .page4 img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+#fullpage .page5 img {
+  width: 250px;
+  height: 250px;
+  border: 3px solid #fff;
+}
 #fullpage .page2,
 #fullpage .page3,
-#fullpage .page4,
-#fullpage .page5 {
+#fullpage .page4 {
   /*.moveY;
 		opacity: 0;*/
 
 }
 #fullpage .page2 img,
 #fullpage .page3 img,
-#fullpage .page4 img,
-#fullpage .page5 img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
+#fullpage .page4 img {
+  width: 360px;
+  height: 364px;
+  /*border-radius: 50%;*/
+
   border: 3px solid #fff;
-  float: left;
+  /*float: left;*/
+
 }
 #fullpage .page2 .info,
 #fullpage .page3 .info,
-#fullpage .page4 .info,
-#fullpage .page5 .info {
-  float: left;
-  margin-left: 100px;
+#fullpage .page4 .info {
+  /*float: left;
+			margin-left: 100px;*/
+
 }
