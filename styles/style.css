@@ -8,27 +8,66 @@ a {
 a:hover {
   text-decoration: underline;
 }
-/*@-webkit-keyframes move{
-	from{
-	    .transform(0,0,0);
-	}
-	to{
-		.transformY(100px);
-	}
-}*/
-.moveY {
-  -webkit-transform: translate3d(0, -150px, 0);
-  -moz-transform: translate3d(0, -150px, 0);
-  -o-transform: translate3d(0, -150px, 0);
-  -ms-transform: translate3d(0, -150px, 0);
-  transform: translate3d(0, -150px, 0);
-  -webkit-backface-visibility: hidden;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+@-webkit-keyframes move {
+  from {
+    -webkit-transform: translate3d(0, -150px, 0);
+    -moz-transform: translate3d(0, -150px, 0);
+    -o-transform: translate3d(0, -150px, 0);
+    -ms-transform: translate3d(0, -150px, 0);
+    transform: translate3d(0, -150px, 0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
+@-webkit-keyframes move2 {
+  from {
+    -webkit-transform: translate3d(0, 150px, 0);
+    -moz-transform: translate3d(0, 150px, 0);
+    -o-transform: translate3d(0, 150px, 0);
+    -ms-transform: translate3d(0, 150px, 0);
+    transform: translate3d(0, 150px, 0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes move3 {
+  from {
+    -webkit-transform: translate3d(150px, 0, 0);
+    -moz-transform: translate3d(150px, 0, 0);
+    -o-transform: translate3d(150px, 0, 0);
+    -ms-transform: translate3d(150px, 0, 0);
+    transform: translate3d(150px, 0, 0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/*.moveY{
+	.transform(0,-150px,0);
+	-webkit-backface-visibility: hidden;
+	.transition(all, 0.5s, ease-in, 0.2s);
+	.transition(opacity, 0.5s, linear, 0.2s);
+}*/
 #fullpage .page1,
 #fullpage .page2,
 #fullpage .page3,
@@ -36,39 +75,72 @@ a:hover {
 #fullpage .page5 {
   width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
-#fullpage .active .page1,
+#fullpage .active {
+  /*.page2,.page3,.page4,.page5{
+			.transformY(0);
+			opacity: 1;
+		}*/
+
+}
+#fullpage .active .page1 {
+  /*-webkit-animation: move 0.5s ease-in;*/
+
+}
+#fullpage .active .page1 img {
+  -webkit-animation: move 0.5s ease-in;
+}
+#fullpage .active .page1 h1 {
+  -webkit-animation: move2 0.8s ease-in;
+}
 #fullpage .active .page2 {
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -o-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
+  /*-webkit-animation: move2 0.9s ease-in;*/
+
+  /*-webkit-animation-play-state: running;*/
+
 }
-#fullpage .page1,
+#fullpage .active .page2 img {
+  -webkit-animation: move2 0.8s ease-in;
+}
+#fullpage .active .page2 .info {
+  -webkit-animation: move3 0.8s ease-in;
+}
+#fullpage .page1 img {
+  width: 512px;
+  height: 512px;
+  margin: 0 auto;
+}
+#fullpage .page1 h1 {
+  font-size: 50px;
+}
 #fullpage .page2 {
-  -webkit-transform: translate3d(0, -150px, 0);
-  -moz-transform: translate3d(0, -150px, 0);
-  -o-transform: translate3d(0, -150px, 0);
-  -ms-transform: translate3d(0, -150px, 0);
-  transform: translate3d(0, -150px, 0);
-  -webkit-backface-visibility: hidden;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  /*-webkit-animation: move2 0.5s ease-in;
+		-webkit-animation-play-state: paused;*/
+
 }
-#fullpage .page1 img,
-#fullpage .page2 img {
+#fullpage .page2,
+#fullpage .page3,
+#fullpage .page4,
+#fullpage .page5 {
+  /*.moveY;
+		opacity: 0;*/
+
+}
+#fullpage .page2 img,
+#fullpage .page3 img,
+#fullpage .page4 img,
+#fullpage .page5 img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
   border: 3px solid #fff;
   float: left;
 }
-#fullpage .page1 .info,
-#fullpage .page2 .info {
+#fullpage .page2 .info,
+#fullpage .page3 .info,
+#fullpage .page4 .info,
+#fullpage .page5 .info {
   float: left;
   margin-left: 100px;
 }

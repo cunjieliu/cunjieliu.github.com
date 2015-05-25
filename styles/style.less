@@ -10,6 +10,7 @@ a{
 	}
 }
 
+@imgUrl: "../images";
 //封装兼容性css
 .transform (@x, @y, @z){
 	-webkit-transform: translate3d(@x, @y, @z);
@@ -32,42 +33,107 @@ a{
 	-ms-transform: translateY(@x);
 	transform: translateY(@x);
 }
-.transition (@name, @times, @type){
-	-webkit-transition: @name @times @type;
-    -moz-transition: @name @times @type;
-    -o-transition: @name @times @type;
-    -ms-transition: @name @times @type;
-    transition: @name @times @type;
+.transition (@name, @times, @type, @delay){
+	-webkit-transition: @name @times @type @delay;
+    -moz-transition: @name @times @type @delay;
+    -o-transition: @name @times @type @delay;
+    -ms-transition: @name @times @type @delay;
+    transition: @name @times @type @delay;
 }
 
+
 //定义动画
-/*@-webkit-keyframes move{
+@-webkit-keyframes move{
 	from{
-	    .transform(0,0,0);
+	    .transform(0,-150px,0);
+	    opacity: 0;
 	}
 	to{
-		.transformY(100px);
+		.transformY(0);
+		opacity: 1;
 	}
-}*/
-.moveY{
+}
+
+@-webkit-keyframes move2{
+	from{
+	    .transform(0,150px,0);
+	    opacity: 0;
+	}
+	to{
+		.transformY(0);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes move3{
+	from{
+	    .transform(150px,0,0);
+	    opacity: 0;
+	}
+	to{
+		.transformX(0);
+		opacity: 1;
+	}
+}
+/*.moveY{
 	.transform(0,-150px,0);
 	-webkit-backface-visibility: hidden;
-	.transition(all, 0.5s, ease-in-out)
-}
+	.transition(all, 0.5s, ease-in, 0.2s);
+	.transition(opacity, 0.5s, linear, 0.2s);
+}*/
 
 //主要css
 #fullpage{
 	.page1,.page2,.page3,.page4,.page5{
 		width: 800px;
 		margin: 0 auto;
+		text-align: center;
 	}
 	.active{
-		.page1,.page2{
+		.page1{
+			/*-webkit-animation: move 0.5s ease-in;*/
+			img{
+				-webkit-animation: move 0.5s ease-in;
+			}
+			h1{
+				-webkit-animation: move2 0.8s ease-in;
+			}
+		}
+		.page2{
+			/*-webkit-animation: move2 0.9s ease-in;*/
+			/*-webkit-animation-play-state: running;*/
+			img{
+				-webkit-animation: move2 0.8s ease-in;
+			}
+			.info{
+				-webkit-animation: move3 0.8s ease-in;
+			}
+		}
+		.page3{}
+		.page4{}
+		.page5{}
+		/*.page2,.page3,.page4,.page5{
 			.transformY(0);
+			opacity: 1;
+		}*/
+	}
+	.page1{
+		img{
+			width: 512px;
+			height: 512px;
+			margin: 0 auto;
+		}
+		h1{
+			font-size: 50px;
 		}
 	}
-	.page1,.page2{
-		.moveY;
+	.page2{
+		/*-webkit-animation: move2 0.5s ease-in;
+		-webkit-animation-play-state: paused;*/
+	}
+	.page2,.page3,.page4,.page5{
+		/*.moveY;
+		opacity: 0;*/
 		img{
 			width: 250px;
 			height: 250px;
